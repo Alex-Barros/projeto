@@ -47,19 +47,18 @@ body * {
   max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
-
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 /* profile */
 #profile {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   text-align: center;
   padding: 24px;
 }
 
 #profile img {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   width: 112px;
 }
 
@@ -71,7 +70,7 @@ body * {
 
 /* switch */
 #switch {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: relative;
   width: 64px;
 
@@ -90,11 +89,18 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-back 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
+  /* right: 0;
+  left: initial; */
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -120,8 +126,7 @@ ul {
 }
 
 ul li a {
-  border: 1px solid green;
-
+  /* border: 1px solid green; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,8 +154,7 @@ ul li a:hover {
 
 /* social links */
 #social-links {
-  border: 1px solid yellow;
-
+  /* border: 1px solid yellow; */
   display: flex;
   justify-content: center;
 
@@ -160,8 +164,7 @@ ul li a:hover {
 }
 
 #social-links a {
-  border: 1px solid green;
-
+  /* border: 1px solid green; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,12 +179,13 @@ ul li a:hover {
 }
 
 footer {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
 }
 
+/* At-rules */
 /* media queries */
 @media (min-width: 700px) {
   :root {
@@ -190,5 +194,24 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
