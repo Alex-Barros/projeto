@@ -6,7 +6,7 @@ function toggleMode() {
   //   html.classList.remove("light")
   // } else {
   //   html.classList.add("light")
-  // }
+  // } 
 
   // pegar a tag img
   const img = document.querySelector('#profile img');
